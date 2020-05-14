@@ -16,6 +16,8 @@ class Test extends BaseController
 	6. Test::index utilizes the newly created view files.
 	7. Added loadHelper()
 	8. Added formHelper()
+	9. Added escDemo()
+	10. Added csrfDemo()
 	*/
 
 	public function index()
@@ -62,6 +64,11 @@ class Test extends BaseController
 
 	function escDemo() {
 		echo esc('<h1>HTML</h1>');
+	}
+
+	function csrfDemo() {
+		d(csrf_hash()); // this is a global function that utilizes the Security class getCSRFHash() method
+		d(service('security')->getCSRFHash());
 	}
 
 }

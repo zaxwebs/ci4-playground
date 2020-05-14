@@ -11,6 +11,7 @@ class Test extends BaseController
 	1. $baseURL in Config/App.php (Update to your own)
 	2. .env environment set to 'development'
 	3. Deleted Home controller and created Test controller
+	3.1. Updated Config/Routes.php to have default controller as Test
 	4. Added header and footer partials as well as index.php to App/Views
 	5. Routing updated to Test::index
 	6. Test::index utilizes the newly created view files.
@@ -22,6 +23,7 @@ class Test extends BaseController
 	12. Added loggerDemo()
 	13. Added null()
 	14. Added exceptionDemo()
+	15. Created Controllers/Blank.php to dd($this)
 	*/
 
 	public function index()

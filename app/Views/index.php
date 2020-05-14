@@ -15,6 +15,7 @@
 				'/test/loggerDemo' => 'logging demo',
 				'/test/null' => 'null()',
 				'/test/exceptionDemo' => 'exception demo',
+				'/blank' => 'Inspect an empty controller instance',
 			];
 
 			foreach($links as $link => $title) {

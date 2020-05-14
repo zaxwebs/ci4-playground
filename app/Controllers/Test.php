@@ -8,7 +8,7 @@ class Test extends BaseController
 	2. d() & dd() are global debugging function of Kint included in CI4.
 
 	Changes:
-	1. $baseURL in Config/App.php
+	1. $baseURL in Config/App.php (Update to your own)
 	2. .env environment set to 'development'
 	3. Deleted Home controller and created Test controller
 	4. Added header and footer partials as well as index.php to App/Views
@@ -57,7 +57,11 @@ class Test extends BaseController
 		d(site_url()); // Returns your site URL, as specified in your config file.
 		d(site_url('test?id=1'));
 		d(base_url()); // This function returns the same thing as site_url(), without the index.php being appended.
-		d(anchor('/test', 'Click Me', 'class="example example-link"')); // recommended way of creating links
+		d(anchor('/test', 'Click Me', 'class="example example-link"')); // recommended way of creating links`
+	}
+
+	function escDemo() {
+		echo esc('<h1>HTML</h1>');
 	}
 
 }

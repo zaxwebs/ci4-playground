@@ -10,6 +10,7 @@ class Test extends BaseController
 	4. Added header and footer partials as well as index.php to App/Views
 	5. Routing updated to Test::index
 	6. Test::index utilizes the newly created view files.
+	7. Added loadHelper()
 	*/
 
 	public function index() {
@@ -20,6 +21,12 @@ class Test extends BaseController
 
 	public function test()
 	{
+	}
+
+	public function loadHelper()
+	{
+		helper('number'); // loads the 'number' helper
+		echo number_to_currency(1234.56, 'USD');
 	}
 
 }

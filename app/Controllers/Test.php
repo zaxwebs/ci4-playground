@@ -24,6 +24,7 @@ class Test extends BaseController
 	13. Added null()
 	14. Added exceptionDemo()
 	15. Created Controllers/Blank.php to dd($this)
+	16. Added controllerValidation()
 	*/
 
 	public function index()
@@ -116,6 +117,18 @@ class Test extends BaseController
 		Otherwise it displays the 'We hit a snag' message from Views/errors/html/production.php
 		*/
 		throw new \Exception('This is a demo exception.');
+	}
+
+	function controllerValidation()
+	{
+		/*
+		Internal workings of validation in controller
+		*/
+		d($this->validator); // null, by default... extended from Controller
+		$rules = ['name'=>'required'];
+		$this->validate($rules); // from Controller, this function relies on Validation service.
+		d($this->validator);
+		d($this->validator->run());
 	}
 
 }

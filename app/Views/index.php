@@ -8,14 +8,15 @@
 		<?php
 
 			$links = [
-				'/test/loadHelper' => 'Loading a helper',
-				'/test/formHelper' => 'Form helper demo',
-				'/test/urlHelper' => 'URL helper demo',
-				'/test/escDemo' => 'esc() demo',
-				'/test/loggerDemo' => 'logging demo',
-				'/test/null' => 'null()',
-				'/test/exceptionDemo' => 'exception demo',
-				'/blank' => 'Inspect an empty controller instance',
+				'test/loadHelper' => 'Loading a helper',
+				'test/formHelper' => 'Form helper demo',
+				'test/urlHelper' => 'URL helper demo',
+				'test/escDemo' => 'esc() demo',
+				'test/loggerDemo' => 'logging demo',
+				'test/null' => 'null()',
+				'test/exceptionDemo' => 'exception demo',
+				'blank' => 'Inspect an empty controller instance',
+				'test/controllerValidation' => 'Dissect validation mechanism in controller',
 			];
 
 			foreach($links as $link => $title) {

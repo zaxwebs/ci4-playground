@@ -3,6 +3,10 @@
 class Test extends BaseController
 {
 	/*
+	Pre:
+	1. Unless otherwise specified the file referred to is this (/Test).
+	2. d() & dd() are global debugging function of Kint included in CI4.
+
 	Changes:
 	1. $baseURL in Config/App.php
 	2. .env environment set to 'development'
@@ -43,6 +47,17 @@ class Test extends BaseController
 		$hidden = ['origin' => 'home'];
 		$form = form_open('/test', $attributes, $hidden); // saving to variable for dd-ing
 		dd($form); // dump & die
+	}
+
+	function urlHelper()
+	{
+		/*
+		Unlike other helpers this one is loaded by default
+		*/
+		d(site_url()); // Returns your site URL, as specified in your config file.
+		d(site_url('test?id=1'));
+		d(base_url()); // This function returns the same thing as site_url(), without the index.php being appended.
+		d(anchor('/test', 'Click Me', 'class="example example-link"')); // recommended way of creating links
 	}
 
 }

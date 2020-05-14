@@ -18,6 +18,7 @@ class Test extends BaseController
 	8. Added formHelper()
 	9. Added escDemo()
 	10. Added csrfDemo()
+	11. Added timerDemo()
 	*/
 
 	public function index()
@@ -69,6 +70,15 @@ class Test extends BaseController
 	function csrfDemo() {
 		d(csrf_hash()); // this is a global function that utilizes the Security class getCSRFHash() method
 		d(service('security')->getCSRFHash());
+	}
+
+	function timerDemo() {
+		d(timer());
+		timer('x'); //starts timer named x
+		sleep(1);
+		timer('x'); //stops timer named x
+		d(timer()->getElapsedTime('x'));
+		d(timer()->getTimers());
 	}
 
 }

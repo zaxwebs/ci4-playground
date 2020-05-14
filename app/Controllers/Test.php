@@ -81,4 +81,12 @@ class Test extends BaseController
 		d(timer()->getTimers());
 	}
 
+	function loggerDemo() {
+		/*
+		https://codeigniter4.github.io/userguide/general/logging.html?highlight=logger
+		Default threshold is 3 -> 1) emergency, 2) alert, 3) critical.
+		*/
+		log_message('alert', 'This is just a test log.'); // logs an alert log to /writable/logs
+	}
+
 }

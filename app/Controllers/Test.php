@@ -65,16 +65,19 @@ class Test extends BaseController
 		d(anchor('/test', 'Click Me', 'class="example example-link"')); // recommended way of creating links`
 	}
 
-	function escDemo() {
+	function escDemo()
+	{
 		echo esc('<h1>HTML</h1>');
 	}
 
-	function csrfDemo() {
+	function csrfDemo()
+	{
 		d(csrf_hash()); // this is a global function that utilizes the Security class getCSRFHash() method
 		d(service('security')->getCSRFHash());
 	}
 
-	function timerDemo() {
+	function timerDemo()
+	{
 		d(timer());
 		timer('x'); //starts timer named x
 		sleep(1);
@@ -83,7 +86,8 @@ class Test extends BaseController
 		d(timer()->getTimers());
 	}
 
-	function loggerDemo() {
+	function loggerDemo()
+	{
 		/*
 		https://codeigniter4.github.io/userguide/general/logging.html?highlight=logger
 		Default threshold is 3 -> 1) emergency, 2) alert, 3) critical.
@@ -91,7 +95,8 @@ class Test extends BaseController
 		log_message('alert', 'This is just a test log.'); // logs an alert log to /writable/logs
 	}
 
-	function null() {
+	function null()
+	{
 		/*
 		null-coalesce operator (PHP7)
 		This is not CI4-specific but thought I'd add it here for reference.
@@ -102,7 +107,8 @@ class Test extends BaseController
 		echo $this->request->getGet('string') ?? 'Hello World!';
 	}
 
-	function exceptionDemo() {
+	function exceptionDemo()
+	{
 		/*
 		Displays exception along with where it occurred when in development mode.
 		Otherwise it displays the 'We hit a snag' message from Views/errors/html/production.php

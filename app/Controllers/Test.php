@@ -7,7 +7,7 @@ class Test extends BaseController
 	1. Unless otherwise specified the file referred to is this (/Test).
 	2. d() & dd() are global debugging function of Kint included in CI4.
 
-	Changes:
+	Procedure:
 	1. $baseURL in Config/App.php (Update to your own)
 	2. .env environment set to 'development'
 	3. Deleted Home controller and created Test controller

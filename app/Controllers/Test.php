@@ -19,6 +19,8 @@ class Test extends BaseController
 	9. Added escDemo()
 	10. Added csrfDemo()
 	11. Added timerDemo()
+	12. Added loggerDemo()
+	13. Added null()
 	*/
 
 	public function index()
@@ -30,7 +32,6 @@ class Test extends BaseController
 
 	public function test()
 	{
-
 	}
 
 	public function loadHelper()
@@ -87,6 +88,17 @@ class Test extends BaseController
 		Default threshold is 3 -> 1) emergency, 2) alert, 3) critical.
 		*/
 		log_message('alert', 'This is just a test log.'); // logs an alert log to /writable/logs
+	}
+
+	function null() {
+		/*
+		null-coalesce operator (PHP7)
+		This is not CI4-specific but thought I'd add it here for reference.
+		It demos how you can default to a value if !isset
+		E.g. echo $name ?? 'User'; 
+		*/
+		d($this->request->getGet('string'));
+		echo $this->request->getGet('string') ?? 'Hello World!';
 	}
 
 }

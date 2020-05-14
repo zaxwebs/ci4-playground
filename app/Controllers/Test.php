@@ -21,6 +21,7 @@ class Test extends BaseController
 	11. Added timerDemo()
 	12. Added loggerDemo()
 	13. Added null()
+	14. Added exceptionDemo()
 	*/
 
 	public function index()
@@ -99,6 +100,14 @@ class Test extends BaseController
 		*/
 		d($this->request->getGet('string'));
 		echo $this->request->getGet('string') ?? 'Hello World!';
+	}
+
+	function exceptionDemo() {
+		/*
+		Displays exception along with where it occurred when in development mode.
+		Otherwise it displays the 'We hit a snag' message from Views/errors/html/production.php
+		*/
+		throw new \Exception('This is a demo exception.');
 	}
 
 }

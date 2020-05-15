@@ -25,6 +25,7 @@ class Test extends BaseController
 	14. Added exceptionDemo()
 	15. Created Controllers/Blank.php to dd($this)
 	16. Added controllerValidation()
+	17. Added ValidationClassDemo()
 	*/
 
 	public function index()
@@ -129,6 +130,35 @@ class Test extends BaseController
 		$this->validate($rules); // from Controller, this function relies on Validation service.
 		d($this->validator);
 		d($this->validator->run());
+	}
+
+	function ValidationClassDemo()
+	{
+		$validation = service('validation');
+		// setting single rule
+		$validation->setRule('username', 'Username', 'required');
+		//setting multiple rules
+		$rules = [
+			'name' => 'required',
+			'password' => [
+				'rules' => 'required|min_length[10]',
+				'errors' => [
+					'min_length' => 'Password must be at least {param} characters in length.'
+					]
+				]
+		];
+		// More ways of setting rules: https://codeigniter4.github.io/userguide/libraries/validation.html
+		$validation->setRules($rules);
+		// Test with valid data
+		$valid = ['username' => 'zack', 'name' => 'Zack Webster', 'password' => '1234567890'];
+		d($validation->run($valid));
+		d($validation->getErrors());
+		d($validation->showError('password'));
+		// Test with invalid data
+		$invalid = ['username' => 'zack', 'name' => 'Zack Webster', 'password' => '123'];
+		d($validation->run($invalid));
+		d($validation->getErrors());
+		d($validation->showError('password'));
 	}
 
 }

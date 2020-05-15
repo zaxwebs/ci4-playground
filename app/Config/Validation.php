@@ -28,6 +28,7 @@ class Validation
 	public $templates = [
 		'list'   => 'CodeIgniter\Validation\Views\list',
 		'single' => 'CodeIgniter\Validation\Views\single',
+		'single_custom' => 'partials/error-single'
 	];
 
 	//--------------------------------------------------------------------

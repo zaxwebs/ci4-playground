@@ -26,6 +26,8 @@ class Test extends BaseController
 	15. Created Controllers/Blank.php to dd($this)
 	16. Added controllerValidation()
 	17. Added ValidationClassDemo()
+	18. Created Views/partials/error-alert.php
+	19. Added to $templates in Config/Validation 
 	*/
 
 	public function index()
@@ -159,6 +161,7 @@ class Test extends BaseController
 		d($validation->run($invalid));
 		d($validation->getErrors());
 		d($validation->showError('password'));
+		d($validation->showError('password', 'single_custom')); // custom error  template
 	}
 
 }

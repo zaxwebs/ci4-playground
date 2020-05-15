@@ -17,7 +17,9 @@
 				'test/exceptionDemo' => 'exception demo',
 				'blank' => 'Inspect an empty controller instance',
 				'test/controllerValidation' => 'Dissect validation mechanism in controller',
-				'test/ValidationClassDemo' => 'Validation class utilization',
+				'test/validationClassDemo' => 'Validation class utilization',
+				'test/sessionSetDemo' => 'Session & Flashdata setter',
+				'test/sessionGetDemo' => 'Session & Flashdata getter',
 			];
 
 			foreach($links as $link => $title) {

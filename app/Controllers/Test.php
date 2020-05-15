@@ -27,7 +27,8 @@ class Test extends BaseController
 	16. Added controllerValidation()
 	17. Added ValidationClassDemo()
 	18. Created Views/partials/error-alert.php
-	19. Added to $templates in Config/Validation 
+	19. Added to $templates in Config/Validation
+	20. Added session (& flashdata) set & get demos 
 	*/
 
 	public function index()
@@ -134,7 +135,7 @@ class Test extends BaseController
 		d($this->validator->run());
 	}
 
-	function ValidationClassDemo()
+	function validationClassDemo()
 	{
 		$validation = service('validation');
 		// setting single rule
@@ -162,6 +163,19 @@ class Test extends BaseController
 		d($validation->getErrors());
 		d($validation->showError('password'));
 		d($validation->showError('password', 'single_custom')); // custom error  template
+	}
+
+	function sessionSetDemo() {
+		$session = session(); // get instance from session service
+		$session->set('name', 'Zack');
+		$session->setFlashdata('message', 'Hello!');
+		d($_SESSION);
+	}
+
+	function sessionGetDemo() {
+		$session = session(); // get instance from session service
+		d($session->getFlashdata('message')); // null unless /test/sessionSetDemo was last visited
+		d($_SESSION);
 	}
 
 }

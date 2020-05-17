@@ -28,7 +28,8 @@ class Test extends BaseController
 	17. Added ValidationClassDemo()
 	18. Created Views/partials/error-alert.php
 	19. Added to $templates in Config/Validation
-	20. Added session (& flashdata) set & get demos 
+	20. Added session (& flashdata) set & get demos
+	21. Changed Config/App.php $indexPage to '' to get rid of index.php in anchors
 	*/
 
 	public function index()

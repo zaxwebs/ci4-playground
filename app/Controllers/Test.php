@@ -30,6 +30,8 @@ class Test extends BaseController
 	19. Added to $templates in Config/Validation
 	20. Added session (& flashdata) set & get demos
 	21. Changed Config/App.php $indexPage to '' to get rid of index.php in anchors
+	22. Created custom_helper.php in /Helpers
+	21. Added customHelper()
 	*/
 
 	public function index()
@@ -177,6 +179,11 @@ class Test extends BaseController
 		$session = session(); // get instance from session service
 		d($session->getFlashdata('message')); // null unless /test/sessionSetDemo was last visited
 		d($_SESSION);
+	}
+
+	function customHelper() {
+		helper('custom');
+		test();
 	}
 
 }

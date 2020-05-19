@@ -20,6 +20,7 @@
 				'test/validationClassDemo' => 'Validation class utilization',
 				'test/sessionSetDemo' => 'Session & Flashdata setter',
 				'test/sessionGetDemo' => 'Session & Flashdata getter',
+				'test/customHelper' => 'Creating and utilizing custom helpers',
 			];
 
 			foreach($links as $link => $title) {
